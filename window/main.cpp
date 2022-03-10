@@ -23,7 +23,7 @@ GMEXPORT double window_maximize(void* handle) {
 GMEXPORT double window_minimize(void* handle) {
 	return ShowWindow((HWND)handle, SW_SHOWMINIMIZED);
 }
-GMEXPORT double window_normal(void* handle) {
+GMEXPORT double window_setnormal(void* handle) {
 	return ShowWindow((HWND)handle, SW_SHOWNORMAL);
 }
 
