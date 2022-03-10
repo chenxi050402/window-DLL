@@ -20,6 +20,12 @@ BOOL WINAPI DllMain(HANDLE hinstDLL, DWORD dwReason, LPVOID lpvReserved) {
 GMEXPORT double window_maximize(void* handle) {
 	return ShowWindow((HWND)handle, SW_SHOWMAXIMIZED);
 }
+GMEXPORT double window_minimize(void* handle) {
+	return ShowWindow((HWND)handle, SW_SHOWMINIMIZED);
+}
+GMEXPORT double window_normal(void* handle) {
+	return ShowWindow((HWND)handle, SW_SHOWNORMAL);
+}
 
 GMEXPORT double window_set_focus(void* handle) {
 	return SetForegroundWindow((HWND)handle);
