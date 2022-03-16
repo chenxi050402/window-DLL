@@ -1,4 +1,7 @@
+#pragma comment (lib, "Dwmapi.lib")
+
 #include <Windows.h>
+#include <dwmapi.h>
 #include <string>
 
 using namespace std;
@@ -43,4 +46,13 @@ GMEXPORT double message_yesnocancel(char* text, char* title) {
 			return -1;
 	}
 	return -1;
+}
+
+GMEXPORT double window_set_darkmode(void* handle) {
+	BOOL pvA = TRUE;
+	return DwmSetWindowAttribute((HWND)handle, 20, &pvA, sizeof(BOOL));
+}
+GMEXPORT double window_unset_darkmode(void* handle) {
+	BOOL pvA = FALSE;
+	return DwmSetWindowAttribute((HWND)handle, 20, &pvA, sizeof(BOOL));
 }
